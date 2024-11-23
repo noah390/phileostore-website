@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Feature</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .results {
+      margin-top: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .results ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .results li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .results li:last-child {
+      border-bottom: none;
+    }
+
+    .results li:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .no-results {
+      color: #999;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="search-container">
+  <h1>Search Items</h1>
+  <input type="text" id="search-bar" class="search-bar" placeholder="Search for items...">
+  <div class="results">
+    <ul id="results-list">
+      <!-- Dynamic results will appear here -->
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Sample data
+  const items = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Grapes",
+    "Pineapple",
+    "Watermelon",
+    "Mango",
+    "Blueberry",
+    "Strawberry",
+    "Cherry"
+  ];
+
+  const searchBar = document.getElementById('search-bar');
+  const resultsList = document.getElementById('results-list');
+
+  // Function to update the search results
+  function updateResults(query) {
+    resultsList.innerHTML = ''; // Clear previous results
+
+    const filteredItems = items.filter(item =>
+      item.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (filteredItems.length > 0) {
+      filteredItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        resultsList.appendChild(li);
+      });
+    } else {
+      const noResults = document.createElement('li');
+      noResults.textContent = 'No results found';
+      noResults.classList.add('no-results');
+      resultsList.appendChild(noResults);
+    }
+  }
+
+  // Add event listener for real-time search
+  searchBar.addEventListener('input', (event) => {
+    const query = event.target.value;
+    updateResults(query);
+  });
+</script>
+
+</body>
+</html>

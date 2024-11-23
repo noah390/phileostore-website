@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - [Your Shop Name]</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .about-header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .about-section {
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .collapsible {
+      background-color: #f1f1f1;
+      color: #333;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1em;
+      transition: background-color 0.2s;
+    }
+
+    .collapsible:hover {
+      background-color: #ddd;
+    }
+
+    .content {
+      padding: 0 15px;
+      display: none;
+      overflow: hidden;
+      background-color: #f9f9f9;
+    }
+
+    .content p {
+      margin: 10px 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="about-container">
+  <div class="about-header">
+    <h1>About Us</h1>
+  </div>
+
+  <div class="about-section">
+    <p>Welcome to <strong>[PHILEO STORE]</strong>—your one-stop destination for fashion, technology, automobiles, food, and much more. Our mission is to meet the everyday needs of people while ensuring quality, affordability, and sustainability.</p>
+    <button type="button" class="collapsible">Our Mission</button>
+    <div class="content">
+      <p>We aim to provide a seamless shopping experience, combining diverse product offerings with values that matter, such as eco-friendliness and affordability.</p>
+    </div>
+
+    <button type="button" class="collapsible">Our Values</button>
+    <div class="content">
+      <p>- Eco-Friendly: Supporting sustainability through mindful practices.</p>
+      <p>- Handmade: Offering unique, artisan-crafted items.</p>
+      <p>- Affordable: Providing quality products at reasonable prices.</p>
+    </div>
+
+    <button type="button" class="collapsible">Why Choose Us?</button>
+    <div class="content">
+      <p>We are dedicated to making your life simpler, better, and more enjoyable. With exceptional customer service and a commitment to quality, [Your Shop Name] is here to serve you.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 [PHILEO STORE]. All Rights Reserved.</p>
+</div>
+
+<script>
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(button => {
+    button.addEventListener("click", function() {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
